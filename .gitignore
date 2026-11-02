@@ -1,0 +1,10 @@
+.godot/
+.godot-build-cache/
+dist/
+work/
+__pycache__/
+.DS_Store
+*.zip
+*.dmg
+*.exe
+*.pck

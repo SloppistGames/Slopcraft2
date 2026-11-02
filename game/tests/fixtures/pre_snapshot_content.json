@@ -1,0 +1,1323 @@
+{
+  "source": "Pre-update source archive, snapshot 0.1 content",
+  "entries": [
+    {
+      "id": 0,
+      "name": "Air"
+    },
+    {
+      "id": 1,
+      "name": "Grass Block"
+    },
+    {
+      "id": 2,
+      "name": "Dirt"
+    },
+    {
+      "id": 3,
+      "name": "Stone"
+    },
+    {
+      "id": 4,
+      "name": "Cobblestone"
+    },
+    {
+      "id": 5,
+      "name": "Oak Log"
+    },
+    {
+      "id": 6,
+      "name": "Oak Leaves"
+    },
+    {
+      "id": 7,
+      "name": "Oak Planks"
+    },
+    {
+      "id": 8,
+      "name": "Sand"
+    },
+    {
+      "id": 9,
+      "name": "Water"
+    },
+    {
+      "id": 10,
+      "name": "Bedrock"
+    },
+    {
+      "id": 11,
+      "name": "Coal Ore"
+    },
+    {
+      "id": 12,
+      "name": "Iron Ore"
+    },
+    {
+      "id": 13,
+      "name": "Gold Ore"
+    },
+    {
+      "id": 14,
+      "name": "Diamond Ore"
+    },
+    {
+      "id": 15,
+      "name": "Snow"
+    },
+    {
+      "id": 16,
+      "name": "Glass"
+    },
+    {
+      "id": 17,
+      "name": "Bricks"
+    },
+    {
+      "id": 18,
+      "name": "Obsidian"
+    },
+    {
+      "id": 19,
+      "name": "Netherrack"
+    },
+    {
+      "id": 20,
+      "name": "Lava"
+    },
+    {
+      "id": 21,
+      "name": "Soul Sand"
+    },
+    {
+      "id": 22,
+      "name": "Glowstone"
+    },
+    {
+      "id": 23,
+      "name": "End Stone"
+    },
+    {
+      "id": 24,
+      "name": "Purpur"
+    },
+    {
+      "id": 25,
+      "name": "Crafting Table"
+    },
+    {
+      "id": 26,
+      "name": "Furnace"
+    },
+    {
+      "id": 27,
+      "name": "Chest"
+    },
+    {
+      "id": 28,
+      "name": "Torch"
+    },
+    {
+      "id": 29,
+      "name": "Nether Portal"
+    },
+    {
+      "id": 30,
+      "name": "End Portal"
+    },
+    {
+      "id": 31,
+      "name": "Spruce Log"
+    },
+    {
+      "id": 32,
+      "name": "Spruce Leaves"
+    },
+    {
+      "id": 33,
+      "name": "Birch Log"
+    },
+    {
+      "id": 34,
+      "name": "Birch Leaves"
+    },
+    {
+      "id": 35,
+      "name": "Spruce Planks"
+    },
+    {
+      "id": 36,
+      "name": "Birch Planks"
+    },
+    {
+      "id": 37,
+      "name": "Acacia Log"
+    },
+    {
+      "id": 38,
+      "name": "Acacia Planks"
+    },
+    {
+      "id": 39,
+      "name": "Acacia Leaves"
+    },
+    {
+      "id": 40,
+      "name": "Cherry Log"
+    },
+    {
+      "id": 41,
+      "name": "Cherry Planks"
+    },
+    {
+      "id": 42,
+      "name": "Cherry Leaves"
+    },
+    {
+      "id": 43,
+      "name": "Dark Oak Log"
+    },
+    {
+      "id": 44,
+      "name": "Dark Oak Planks"
+    },
+    {
+      "id": 45,
+      "name": "Jungle Log"
+    },
+    {
+      "id": 46,
+      "name": "Jungle Planks"
+    },
+    {
+      "id": 47,
+      "name": "Moss"
+    },
+    {
+      "id": 48,
+      "name": "Clay"
+    },
+    {
+      "id": 49,
+      "name": "Gravel"
+    },
+    {
+      "id": 50,
+      "name": "Sandstone"
+    },
+    {
+      "id": 51,
+      "name": "Red Sand"
+    },
+    {
+      "id": 52,
+      "name": "Red Sandstone"
+    },
+    {
+      "id": 53,
+      "name": "Stone Bricks"
+    },
+    {
+      "id": 54,
+      "name": "Mossy Stone Bricks"
+    },
+    {
+      "id": 55,
+      "name": "Polished Granite"
+    },
+    {
+      "id": 56,
+      "name": "Diorite"
+    },
+    {
+      "id": 57,
+      "name": "Andesite"
+    },
+    {
+      "id": 58,
+      "name": "Deepslate"
+    },
+    {
+      "id": 59,
+      "name": "Deepslate Bricks"
+    },
+    {
+      "id": 60,
+      "name": "Blackstone"
+    },
+    {
+      "id": 61,
+      "name": "Basalt"
+    },
+    {
+      "id": 62,
+      "name": "Nether Bricks"
+    },
+    {
+      "id": 63,
+      "name": "Red Nether Bricks"
+    },
+    {
+      "id": 64,
+      "name": "Crimson Stem"
+    },
+    {
+      "id": 65,
+      "name": "Crimson Planks"
+    },
+    {
+      "id": 66,
+      "name": "Crimson Wart"
+    },
+    {
+      "id": 67,
+      "name": "Warped Stem"
+    },
+    {
+      "id": 68,
+      "name": "Warped Planks"
+    },
+    {
+      "id": 69,
+      "name": "Warped Wart"
+    },
+    {
+      "id": 70,
+      "name": "Shroomlight"
+    },
+    {
+      "id": 71,
+      "name": "Quartz Block"
+    },
+    {
+      "id": 72,
+      "name": "Quartz Bricks"
+    },
+    {
+      "id": 73,
+      "name": "Copper Ore"
+    },
+    {
+      "id": 74,
+      "name": "Emerald Ore"
+    },
+    {
+      "id": 75,
+      "name": "Redstone Ore"
+    },
+    {
+      "id": 76,
+      "name": "Lapis Ore"
+    },
+    {
+      "id": 77,
+      "name": "Iron Block"
+    },
+    {
+      "id": 78,
+      "name": "Gold Block"
+    },
+    {
+      "id": 79,
+      "name": "Diamond Block"
+    },
+    {
+      "id": 80,
+      "name": "Copper Block"
+    },
+    {
+      "id": 81,
+      "name": "Oxidized Copper"
+    },
+    {
+      "id": 82,
+      "name": "Emerald Block"
+    },
+    {
+      "id": 83,
+      "name": "Lapis Block"
+    },
+    {
+      "id": 84,
+      "name": "Redstone Block"
+    },
+    {
+      "id": 85,
+      "name": "Coal Block"
+    },
+    {
+      "id": 86,
+      "name": "Amethyst"
+    },
+    {
+      "id": 87,
+      "name": "Ice"
+    },
+    {
+      "id": 88,
+      "name": "Packed Ice"
+    },
+    {
+      "id": 89,
+      "name": "Prismarine"
+    },
+    {
+      "id": 90,
+      "name": "Sea Lantern"
+    },
+    {
+      "id": 91,
+      "name": "Bookshelf"
+    },
+    {
+      "id": 92,
+      "name": "Hay Bale"
+    },
+    {
+      "id": 93,
+      "name": "Pumpkin"
+    },
+    {
+      "id": 94,
+      "name": "Melon"
+    },
+    {
+      "id": 95,
+      "name": "Cactus"
+    },
+    {
+      "id": 96,
+      "name": "Sponge"
+    },
+    {
+      "id": 97,
+      "name": "TNT"
+    },
+    {
+      "id": 98,
+      "name": "Slime Block"
+    },
+    {
+      "id": 99,
+      "name": "Honey Block"
+    },
+    {
+      "id": 100,
+      "name": "Terracotta"
+    },
+    {
+      "id": 101,
+      "name": "White Terracotta"
+    },
+    {
+      "id": 102,
+      "name": "Orange Terracotta"
+    },
+    {
+      "id": 103,
+      "name": "Magenta Terracotta"
+    },
+    {
+      "id": 104,
+      "name": "Light Blue Terracotta"
+    },
+    {
+      "id": 105,
+      "name": "Yellow Terracotta"
+    },
+    {
+      "id": 106,
+      "name": "Lime Terracotta"
+    },
+    {
+      "id": 107,
+      "name": "Pink Terracotta"
+    },
+    {
+      "id": 108,
+      "name": "Gray Terracotta"
+    },
+    {
+      "id": 109,
+      "name": "Light Gray Terracotta"
+    },
+    {
+      "id": 110,
+      "name": "Cyan Terracotta"
+    },
+    {
+      "id": 111,
+      "name": "Purple Terracotta"
+    },
+    {
+      "id": 112,
+      "name": "Blue Terracotta"
+    },
+    {
+      "id": 113,
+      "name": "Brown Terracotta"
+    },
+    {
+      "id": 114,
+      "name": "Green Terracotta"
+    },
+    {
+      "id": 115,
+      "name": "Red Terracotta"
+    },
+    {
+      "id": 116,
+      "name": "Black Terracotta"
+    },
+    {
+      "id": 117,
+      "name": "White Wool"
+    },
+    {
+      "id": 118,
+      "name": "Orange Wool"
+    },
+    {
+      "id": 119,
+      "name": "Magenta Wool"
+    },
+    {
+      "id": 120,
+      "name": "Light Blue Wool"
+    },
+    {
+      "id": 121,
+      "name": "Yellow Wool"
+    },
+    {
+      "id": 122,
+      "name": "Lime Wool"
+    },
+    {
+      "id": 123,
+      "name": "Pink Wool"
+    },
+    {
+      "id": 124,
+      "name": "Gray Wool"
+    },
+    {
+      "id": 125,
+      "name": "Light Gray Wool"
+    },
+    {
+      "id": 126,
+      "name": "Cyan Wool"
+    },
+    {
+      "id": 127,
+      "name": "Purple Wool"
+    },
+    {
+      "id": 128,
+      "name": "Blue Wool"
+    },
+    {
+      "id": 129,
+      "name": "Brown Wool"
+    },
+    {
+      "id": 130,
+      "name": "Green Wool"
+    },
+    {
+      "id": 131,
+      "name": "Red Wool"
+    },
+    {
+      "id": 132,
+      "name": "Black Wool"
+    },
+    {
+      "id": 133,
+      "name": "White Concrete"
+    },
+    {
+      "id": 134,
+      "name": "Black Concrete"
+    },
+    {
+      "id": 135,
+      "name": "Red Concrete"
+    },
+    {
+      "id": 136,
+      "name": "Blue Concrete"
+    },
+    {
+      "id": 137,
+      "name": "Yellow Concrete"
+    },
+    {
+      "id": 138,
+      "name": "End Stone Bricks"
+    },
+    {
+      "id": 139,
+      "name": "Purpur Pillar"
+    },
+    {
+      "id": 140,
+      "name": "Dragon Egg"
+    },
+    {
+      "id": 141,
+      "name": "Ancient Debris"
+    },
+    {
+      "id": 142,
+      "name": "Netherite Block"
+    },
+    {
+      "id": 143,
+      "name": "Red Mushroom"
+    },
+    {
+      "id": 144,
+      "name": "Brown Mushroom"
+    },
+    {
+      "id": 145,
+      "name": "Magma Block"
+    },
+    {
+      "id": 146,
+      "name": "Obsidian Lantern"
+    },
+    {
+      "id": 1000,
+      "name": "Stick"
+    },
+    {
+      "id": 1001,
+      "name": "Coal"
+    },
+    {
+      "id": 1002,
+      "name": "Raw Iron"
+    },
+    {
+      "id": 1003,
+      "name": "Iron Ingot"
+    },
+    {
+      "id": 1004,
+      "name": "Raw Gold"
+    },
+    {
+      "id": 1005,
+      "name": "Gold Ingot"
+    },
+    {
+      "id": 1006,
+      "name": "Diamond"
+    },
+    {
+      "id": 1007,
+      "name": "Raw Copper"
+    },
+    {
+      "id": 1008,
+      "name": "Copper Ingot"
+    },
+    {
+      "id": 1009,
+      "name": "Emerald"
+    },
+    {
+      "id": 1010,
+      "name": "Redstone Dust"
+    },
+    {
+      "id": 1011,
+      "name": "Lapis Lazuli"
+    },
+    {
+      "id": 1012,
+      "name": "Quartz"
+    },
+    {
+      "id": 1013,
+      "name": "Clay Ball"
+    },
+    {
+      "id": 1014,
+      "name": "Brick"
+    },
+    {
+      "id": 1015,
+      "name": "Wheat"
+    },
+    {
+      "id": 1016,
+      "name": "String"
+    },
+    {
+      "id": 1017,
+      "name": "Feather"
+    },
+    {
+      "id": 1018,
+      "name": "Flint"
+    },
+    {
+      "id": 1019,
+      "name": "Blaze Rod"
+    },
+    {
+      "id": 1020,
+      "name": "Ender Pearl"
+    },
+    {
+      "id": 1021,
+      "name": "Eye of the End"
+    },
+    {
+      "id": 1022,
+      "name": "Netherite Scrap"
+    },
+    {
+      "id": 1023,
+      "name": "Netherite Ingot"
+    },
+    {
+      "id": 1024,
+      "name": "Leather"
+    },
+    {
+      "id": 1025,
+      "name": "Blaze Powder"
+    },
+    {
+      "id": 1026,
+      "name": "Paper"
+    },
+    {
+      "id": 1027,
+      "name": "Book"
+    },
+    {
+      "id": 1028,
+      "name": "Gunpowder"
+    },
+    {
+      "id": 1029,
+      "name": "Slimeball"
+    },
+    {
+      "id": 1030,
+      "name": "Obsidian Shard"
+    },
+    {
+      "id": 1100,
+      "name": "Wooden Pickaxe"
+    },
+    {
+      "id": 1101,
+      "name": "Stone Pickaxe"
+    },
+    {
+      "id": 1102,
+      "name": "Iron Pickaxe"
+    },
+    {
+      "id": 1103,
+      "name": "Diamond Pickaxe"
+    },
+    {
+      "id": 1104,
+      "name": "Golden Pickaxe"
+    },
+    {
+      "id": 1105,
+      "name": "Netherite Pickaxe"
+    },
+    {
+      "id": 1110,
+      "name": "Wooden Axe"
+    },
+    {
+      "id": 1111,
+      "name": "Stone Axe"
+    },
+    {
+      "id": 1112,
+      "name": "Iron Axe"
+    },
+    {
+      "id": 1113,
+      "name": "Diamond Axe"
+    },
+    {
+      "id": 1120,
+      "name": "Wooden Shovel"
+    },
+    {
+      "id": 1121,
+      "name": "Stone Shovel"
+    },
+    {
+      "id": 1122,
+      "name": "Iron Shovel"
+    },
+    {
+      "id": 1123,
+      "name": "Diamond Shovel"
+    },
+    {
+      "id": 1130,
+      "name": "Wooden Sword"
+    },
+    {
+      "id": 1131,
+      "name": "Stone Sword"
+    },
+    {
+      "id": 1132,
+      "name": "Iron Sword"
+    },
+    {
+      "id": 1133,
+      "name": "Diamond Sword"
+    },
+    {
+      "id": 1134,
+      "name": "Netherite Sword"
+    },
+    {
+      "id": 1140,
+      "name": "Iron Hoe"
+    },
+    {
+      "id": 1141,
+      "name": "Bow"
+    },
+    {
+      "id": 1142,
+      "name": "Arrow"
+    },
+    {
+      "id": 1143,
+      "name": "Flint and Steel"
+    },
+    {
+      "id": 1144,
+      "name": "Bucket"
+    },
+    {
+      "id": 1145,
+      "name": "Water Bucket"
+    },
+    {
+      "id": 1146,
+      "name": "Lava Bucket"
+    },
+    {
+      "id": 1147,
+      "name": "Shears"
+    },
+    {
+      "id": 1148,
+      "name": "Compass"
+    },
+    {
+      "id": 1149,
+      "name": "Clock"
+    },
+    {
+      "id": 1200,
+      "name": "Apple"
+    },
+    {
+      "id": 1201,
+      "name": "Bread"
+    },
+    {
+      "id": 1202,
+      "name": "Cooked Steak"
+    },
+    {
+      "id": 1203,
+      "name": "Golden Apple"
+    },
+    {
+      "id": 1204,
+      "name": "Carrot"
+    },
+    {
+      "id": 1205,
+      "name": "Baked Potato"
+    },
+    {
+      "id": 1206,
+      "name": "Raw Beef"
+    },
+    {
+      "id": 1207,
+      "name": "Melon Slice"
+    },
+    {
+      "id": 1208,
+      "name": "Cooked Porkchop"
+    },
+    {
+      "id": 1209,
+      "name": "Chorus Fruit"
+    },
+    {
+      "id": 1210,
+      "name": "Mushroom Stew"
+    },
+    {
+      "id": 1211,
+      "name": "Sweet Berries"
+    },
+    {
+      "id": 1300,
+      "name": "Iron Helmet"
+    },
+    {
+      "id": 1301,
+      "name": "Iron Chestplate"
+    },
+    {
+      "id": 1302,
+      "name": "Iron Leggings"
+    },
+    {
+      "id": 1303,
+      "name": "Iron Boots"
+    },
+    {
+      "id": 1310,
+      "name": "Diamond Helmet"
+    },
+    {
+      "id": 1311,
+      "name": "Diamond Chestplate"
+    },
+    {
+      "id": 1312,
+      "name": "Diamond Leggings"
+    },
+    {
+      "id": 1313,
+      "name": "Diamond Boots"
+    }
+  ],
+  "recipes": [
+    {
+      "name": "Oak Planks x4",
+      "ingredients": {
+        "5": 1
+      },
+      "result": 7,
+      "count": 4
+    },
+    {
+      "name": "Spruce Planks x4",
+      "ingredients": {
+        "31": 1
+      },
+      "result": 35,
+      "count": 4
+    },
+    {
+      "name": "Birch Planks x4",
+      "ingredients": {
+        "33": 1
+      },
+      "result": 36,
+      "count": 4
+    },
+    {
+      "name": "Cherry Planks x4",
+      "ingredients": {
+        "40": 1
+      },
+      "result": 41,
+      "count": 4
+    },
+    {
+      "name": "Sticks x4",
+      "ingredients": {
+        "7": 2
+      },
+      "result": 1000,
+      "count": 4
+    },
+    {
+      "name": "Crafting Table",
+      "ingredients": {
+        "7": 4
+      },
+      "result": 25,
+      "count": 1
+    },
+    {
+      "name": "Furnace",
+      "ingredients": {
+        "4": 8
+      },
+      "result": 26,
+      "count": 1
+    },
+    {
+      "name": "Chest",
+      "ingredients": {
+        "7": 8
+      },
+      "result": 27,
+      "count": 1
+    },
+    {
+      "name": "Torches x4",
+      "ingredients": {
+        "1000": 1,
+        "1001": 1
+      },
+      "result": 28,
+      "count": 4
+    },
+    {
+      "name": "Wooden Pickaxe",
+      "ingredients": {
+        "7": 3,
+        "1000": 2
+      },
+      "result": 1100,
+      "count": 1
+    },
+    {
+      "name": "Stone Pickaxe",
+      "ingredients": {
+        "4": 3,
+        "1000": 2
+      },
+      "result": 1101,
+      "count": 1
+    },
+    {
+      "name": "Iron Pickaxe",
+      "ingredients": {
+        "1003": 3,
+        "1000": 2
+      },
+      "result": 1102,
+      "count": 1
+    },
+    {
+      "name": "Diamond Pickaxe",
+      "ingredients": {
+        "1006": 3,
+        "1000": 2
+      },
+      "result": 1103,
+      "count": 1
+    },
+    {
+      "name": "Netherite Pickaxe",
+      "ingredients": {
+        "1103": 1,
+        "1023": 1
+      },
+      "result": 1105,
+      "count": 1
+    },
+    {
+      "name": "Stone Axe",
+      "ingredients": {
+        "4": 3,
+        "1000": 2
+      },
+      "result": 1111,
+      "count": 1
+    },
+    {
+      "name": "Iron Axe",
+      "ingredients": {
+        "1003": 3,
+        "1000": 2
+      },
+      "result": 1112,
+      "count": 1
+    },
+    {
+      "name": "Iron Shovel",
+      "ingredients": {
+        "1003": 1,
+        "1000": 2
+      },
+      "result": 1122,
+      "count": 1
+    },
+    {
+      "name": "Wooden Sword",
+      "ingredients": {
+        "7": 2,
+        "1000": 1
+      },
+      "result": 1130,
+      "count": 1
+    },
+    {
+      "name": "Stone Sword",
+      "ingredients": {
+        "4": 2,
+        "1000": 1
+      },
+      "result": 1131,
+      "count": 1
+    },
+    {
+      "name": "Iron Sword",
+      "ingredients": {
+        "1003": 2,
+        "1000": 1
+      },
+      "result": 1132,
+      "count": 1
+    },
+    {
+      "name": "Diamond Sword",
+      "ingredients": {
+        "1006": 2,
+        "1000": 1
+      },
+      "result": 1133,
+      "count": 1
+    },
+    {
+      "name": "Netherite Sword",
+      "ingredients": {
+        "1133": 1,
+        "1023": 1
+      },
+      "result": 1134,
+      "count": 1
+    },
+    {
+      "name": "Bow",
+      "ingredients": {
+        "1000": 3,
+        "1016": 3
+      },
+      "result": 1141,
+      "count": 1
+    },
+    {
+      "name": "Arrows x4",
+      "ingredients": {
+        "1000": 1,
+        "1017": 1,
+        "1018": 1
+      },
+      "result": 1142,
+      "count": 4
+    },
+    {
+      "name": "Flint and Steel",
+      "ingredients": {
+        "1003": 1,
+        "1018": 1
+      },
+      "result": 1143,
+      "count": 1
+    },
+    {
+      "name": "Bucket",
+      "ingredients": {
+        "1003": 3
+      },
+      "result": 1144,
+      "count": 1
+    },
+    {
+      "name": "Bread",
+      "ingredients": {
+        "1015": 3
+      },
+      "result": 1201,
+      "count": 1
+    },
+    {
+      "name": "Golden Apple",
+      "ingredients": {
+        "1200": 1,
+        "1005": 8
+      },
+      "result": 1203,
+      "count": 1
+    },
+    {
+      "name": "Stone Bricks x4",
+      "ingredients": {
+        "3": 4
+      },
+      "result": 53,
+      "count": 4
+    },
+    {
+      "name": "Bricks",
+      "ingredients": {
+        "1014": 4
+      },
+      "result": 17,
+      "count": 1
+    },
+    {
+      "name": "Iron Block",
+      "ingredients": {
+        "1003": 9
+      },
+      "result": 77,
+      "count": 1
+    },
+    {
+      "name": "Gold Block",
+      "ingredients": {
+        "1005": 9
+      },
+      "result": 78,
+      "count": 1
+    },
+    {
+      "name": "Diamond Block",
+      "ingredients": {
+        "1006": 9
+      },
+      "result": 79,
+      "count": 1
+    },
+    {
+      "name": "Blaze Powder x2",
+      "ingredients": {
+        "1019": 1
+      },
+      "result": 1025,
+      "count": 2
+    },
+    {
+      "name": "Eye of the End",
+      "ingredients": {
+        "1020": 1,
+        "1025": 1
+      },
+      "result": 1021,
+      "count": 1
+    },
+    {
+      "name": "Nether Portal",
+      "ingredients": {
+        "18": 6,
+        "1018": 1,
+        "1003": 1
+      },
+      "result": 29,
+      "count": 1
+    },
+    {
+      "name": "End Portal",
+      "ingredients": {
+        "23": 4,
+        "1021": 1
+      },
+      "result": 30,
+      "count": 1
+    },
+    {
+      "name": "Netherite Ingot",
+      "ingredients": {
+        "1022": 4,
+        "1005": 4
+      },
+      "result": 1023,
+      "count": 1
+    },
+    {
+      "name": "Iron Ingot • smelt",
+      "ingredients": {
+        "1002": 1,
+        "1001": 1
+      },
+      "result": 1003,
+      "count": 1,
+      "station": 26
+    },
+    {
+      "name": "Gold Ingot • smelt",
+      "ingredients": {
+        "1004": 1,
+        "1001": 1
+      },
+      "result": 1005,
+      "count": 1,
+      "station": 26
+    },
+    {
+      "name": "Copper Ingot • smelt",
+      "ingredients": {
+        "1007": 1,
+        "1001": 1
+      },
+      "result": 1008,
+      "count": 1,
+      "station": 26
+    },
+    {
+      "name": "Glass x4 • smelt",
+      "ingredients": {
+        "8": 4,
+        "1001": 1
+      },
+      "result": 16,
+      "count": 4,
+      "station": 26
+    },
+    {
+      "name": "Stone x4 • smelt",
+      "ingredients": {
+        "4": 4,
+        "1001": 1
+      },
+      "result": 3,
+      "count": 4,
+      "station": 26
+    },
+    {
+      "name": "Brick x4 • smelt",
+      "ingredients": {
+        "48": 1,
+        "1001": 1
+      },
+      "result": 1014,
+      "count": 4,
+      "station": 26
+    },
+    {
+      "name": "Cooked Steak • smelt",
+      "ingredients": {
+        "1206": 1,
+        "1001": 1
+      },
+      "result": 1202,
+      "count": 1,
+      "station": 26
+    },
+    {
+      "name": "Netherite Scrap • smelt",
+      "ingredients": {
+        "141": 1,
+        "1001": 1
+      },
+      "result": 1022,
+      "count": 1,
+      "station": 26
+    }
+  ]
+}

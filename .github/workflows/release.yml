@@ -1,0 +1,271 @@
+name: Build, verify and publish
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish verified releases and update the launcher catalog (main only)
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+# Never interrupt a publication half way through uploading immutable assets.
+concurrency:
+  group: slopcraft-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-macos:
+    name: Export both products and verify macOS
+    runs-on: macos-14
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Fetch checksum-verified Godot and export templates
+        id: godot
+        run: python tools/build_release.py bootstrap --templates --cache .godot-build-cache
+      - name: Build current snapshot and launcher
+        env:
+          GODOT: ${{ steps.godot.outputs.engine }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: >-
+          python tools/build_release.py build --root . --godot "$GODOT"
+          --output dist/snapshot --game-path game --launcher-path launcher
+          --category snapshot --source-sha "$SOURCE_SHA" --game-smoke-mode world
+      - name: Build the genuine 0.1 archive and companion launcher
+        env:
+          GODOT: ${{ steps.godot.outputs.engine }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: >-
+          python tools/build_release.py build --root . --godot "$GODOT"
+          --output dist/archive --game-path archive/0.1 --launcher-path launcher
+          --version 0.1 --category archive --tag archive-0.1
+          --title "Original 0.1 archive" --source-sha "$SOURCE_SHA" --game-smoke-mode legacy
+      - name: Retain all eight packages, metadata and macOS receipts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: macos-distributions
+          path: dist/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - name: Retain failed build diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: failed-macos-logs
+          path: dist/**/logs/
+          if-no-files-found: warn
+          retention-days: 14
+
+  verify-windows:
+    name: Verify both distributions on Windows
+    needs: build-macos
+    runs-on: windows-2022
+    timeout-minutes: 60
+    steps:
+      - name: Check out exact source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Download the exact cross-exported packages
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: macos-distributions
+          path: dist
+      - name: Fetch checksum-verified native Godot
+        id: godot
+        run: python tools/build_release.py bootstrap --cache .godot-build-cache
+      - name: Smoke-test current game and launcher
+        env:
+          GODOT: ${{ steps.godot.outputs.engine }}
+        run: >-
+          python tools/build_release.py smoke --root . --godot "$env:GODOT"
+          --dist dist/snapshot --platform windows
+      - name: Smoke-test archived game and launcher
+        env:
+          GODOT: ${{ steps.godot.outputs.engine }}
+        run: >-
+          python tools/build_release.py smoke --root . --godot "$env:GODOT"
+          --dist dist/archive --platform windows
+      - name: Verify both platform receipts for the snapshot
+        run: python tools/build_release.py verify --dist dist/snapshot
+      - name: Verify both platform receipts for the archive
+        run: python tools/build_release.py verify --dist dist/archive
+      - name: Retain Windows receipts and logs
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: windows-verification
+          path: |
+            dist/snapshot/verified-windows.json
+            dist/archive/verified-windows.json
+            dist/snapshot/logs/windows/
+            dist/archive/logs/windows/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Retain failed Windows diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: failed-windows-logs
+          path: dist/**/logs/windows/
+          if-no-files-found: warn
+          retention-days: 14
+
+  publish:
+    name: Publish verified releases and catalog
+    needs: [build-macos, verify-windows]
+    if: >-
+      github.repository == 'SloppistGames/Slopcraft2' &&
+      github.ref == 'refs/heads/main' &&
+      ((github.event_name == 'workflow_dispatch' && inputs.publish == true) ||
+       (github.event_name == 'push' && contains(github.event.head_commit.message, '[publish]')))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the tested source for the catalog commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          # Only this explicitly gated job receives credentials with write access.
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Download packages and macOS receipts
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: macos-distributions
+          path: dist
+      - name: Add matching Windows receipts
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: windows-verification
+          path: dist
+      - name: Verify, publish archive first, then snapshot, and prepare catalog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SOURCE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "tools")
+          import build_release as release
+
+          source = os.environ["SOURCE_SHA"]
+          subprocess.run(["git", "fetch", "origin", "main"], check=True)
+          tip = subprocess.check_output(["git", "rev-parse", "origin/main"], text=True).strip()
+          release.require(tip == source, "main moved during verification; run the workflow on its new tip")
+          # Verify both new distributions before making any release public.
+          verified = {}
+          for kind in ("archive", "snapshot"):
+              metadata = release.verify_release(Path("dist") / kind)
+              release.require(metadata["source_sha"] == source, "Artifact belongs to another source revision")
+              release.require(metadata["category"] == kind, "Unexpected release category")
+              verified[kind] = metadata
+
+          published = {}
+          for kind in ("archive", "snapshot"):
+              dist = Path("dist") / kind
+              metadata = verified[kind]
+              tag = metadata["tag"]
+              probe = subprocess.run(
+                  ["gh", "release", "view", tag, "--repo", release.REPOSITORY, "--json", "isDraft"],
+                  capture_output=True, text=True,
+              )
+              if probe.returncode == 0:
+                  release.require(not json.loads(probe.stdout)["isDraft"],
+                                  f"{tag} is an incomplete draft; inspect and repair it before retrying")
+                  # Never replace assets or invent new checksums for an existing release.
+                  dist = Path("dist") / ("published-" + kind)
+                  dist.mkdir(parents=True, exist_ok=True)
+                  subprocess.run([
+                      "gh", "release", "download", tag, "--repo", release.REPOSITORY,
+                      "--dir", str(dist), "--pattern", "*.zip", "--pattern", "build.json",
+                      "--pattern", "verified-macos.json", "--pattern", "verified-windows.json",
+                  ], check=True)
+                  existing = release.verify_release(dist)
+                  release.require(existing["repository"] == release.REPOSITORY
+                                  and existing["tag"] == tag and existing["version"] == metadata["version"]
+                                  and existing["category"] == kind, "Existing release metadata does not match")
+                  if kind == "snapshot":
+                      release.require(existing["source_sha"] == source,
+                                      "Snapshot tag belongs to another commit; increment the version")
+                  metadata = existing
+                  print(f"Reusing verified immutable {tag}", flush=True)
+              else:
+                  release.publish(dist)
+              published[kind] = metadata
+
+          path = Path("launcher/manifest.json")
+          catalog = release.read_json(path)
+          for kind in ("archive", "snapshot"):
+              catalog = release.merge_catalog(catalog, published[kind]["catalog_entry"])
+          # merge_catalog replaces existing entries in place; promote the current
+          # snapshot while retaining the order and fields of every other version.
+          current = published["snapshot"]["version"]
+          catalog["versions"] = (
+              [entry for entry in catalog["versions"] if entry["id"] == current]
+              + [entry for entry in catalog["versions"] if entry["id"] != current]
+          )
+          release.write_json(path, catalog)
+          PY
+      - name: Commit the catalog after both releases succeed
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$SOURCE_SHA" || {
+            echo 'main moved during publication; releases are intact but the catalog commit needs a new review.'
+            exit 1
+          }
+          if git diff --quiet -- launcher/manifest.json; then
+            echo 'Catalog already matches the verified releases.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- launcher/manifest.json
+          git commit -m 'Update verified launcher catalog [skip ci]'
+          git push origin HEAD:main
+      - name: Retain publication diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: publication-diagnostics
+          path: |
+            dist/snapshot/logs/publish-*.log
+            dist/archive/logs/publish-*.log
+            launcher/manifest.json
+          if-no-files-found: warn
+          retention-days: 14

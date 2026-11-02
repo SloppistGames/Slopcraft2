@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://jurl4y6netk8"]
+
+[ext_resource type="Script" uid="uid://de8c8q2nijy50" path="res://game.gd" id="1"]
+
+[node name="Slopcraft2" type="Node" unique_id=1843567596]
+script = ExtResource("1")

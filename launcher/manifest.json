@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "repository": "SloppistGames/Slopcraft2",
+  "versions": [
+    {
+      "id": "0.5.0f",
+      "category": "snapshot",
+      "date": "2026-11-02",
+      "title": "The Living World",
+      "description": "Explore deeper biomes, build with shaped blocks and circuits, rest in beds, sail boats, and chart your world.",
+      "status": "in_development",
+      "save_schema": 2,
+      "packages": {},
+      "changelog": {
+        "Worlds": [
+          "26 surface biomes, deeper caves, villages and strongholds.",
+          "Separate detailed-block and landscape distances.",
+          "World-space precipitation, immersion effects and brighter torches."
+        ],
+        "Build and survive": [
+          "Two-block beds skip night and set your spawn; boats carry you over water.",
+          "Stairs, slabs, fluid flow and functional circuit components.",
+          "Textured creatures, villager trades, third-person held items and custom skins."
+        ],
+        "Pixel art": [
+          "Distinct tops, fronts and sides for utility blocks.",
+          "Transparent crossed plants; redesigned tools and item silhouettes.",
+          "Corrected bed pillow orientation, blanket seams and side mapping in all four rotations."
+        ],
+        "Play your way": [
+          "World atlas with discovery and saved waypoints; rebindable controls.",
+          "Slopwoofer Lullaby with independent music volume and frequency.",
+          "Launcher discovers new versions automatically and keeps installed versions available offline."
+        ],
+        "Known limitations": [
+          "Development snapshot; finite creature roster and Slopcraft circuit rules.",
+          "Detailed blocks load within 2\u201312 chunks; distant landscapes reach 32 chunks.",
+          "macOS is ad-hoc signed without notarization; Windows builds are unsigned."
+        ]
+      }
+    }
+  ]
+}
