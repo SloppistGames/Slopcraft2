@@ -8,9 +8,22 @@
       "date": "2026-11-02",
       "title": "The Living World",
       "description": "Explore deeper biomes, build with shaped blocks and circuits, rest in beds, sail boats, and chart your world.",
-      "status": "in_development",
+      "status": "published",
       "save_schema": 2,
-      "packages": {},
+      "packages": {
+        "macos": {
+          "sha256": "fd4583b4ea75240f96e2dab3a8684d15396fc9c76d0c7074c48d67f537ed5f83",
+          "size": 62715906,
+          "executable": "Slopcraft 2.app/Contents/MacOS/Slopcraft 2",
+          "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2-0.5.0f-macos.zip"
+        },
+        "windows": {
+          "sha256": "702ad41300729c9a82adc32d1b22a06e391c79cd820d06b75db9c5a04b858d56",
+          "size": 40753715,
+          "executable": "Slopcraft2.exe",
+          "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2-0.5.0f-windows.zip"
+        }
+      },
       "changelog": {
         "Worlds": [
           "26 surface biomes, deeper caves, villages and strongholds.",
@@ -34,10 +47,32 @@
         ],
         "Known limitations": [
           "Development snapshot; finite creature roster and Slopcraft circuit rules.",
-          "Detailed blocks load within 2\u201312 chunks; distant landscapes reach 32 chunks.",
+          "Detailed blocks load within 2–12 chunks; distant landscapes reach 32 chunks.",
           "macOS is ad-hoc signed without notarization; Windows builds are unsigned."
         ]
       }
+    },
+    {
+      "id": "0.1",
+      "category": "archive",
+      "date": "2026-11-03",
+      "title": "Original 0.1 archive",
+      "status": "published",
+      "packages": {
+        "macos": {
+          "sha256": "c73a813d72e7c9057f00b166264b891134d8a8cad191bd97f3ce0e6042bc9ee0",
+          "size": 60359977,
+          "executable": "Slopcraft 2.app/Contents/MacOS/Slopcraft 2",
+          "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2-0.1-macos.zip"
+        },
+        "windows": {
+          "sha256": "511583b7280b5fad44576a83f934875adc94537dca094dcc6873709830465359",
+          "size": 38398401,
+          "executable": "Slopcraft2.exe",
+          "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2-0.1-windows.zip"
+        }
+      },
+      "verification": "Native title and world smoke on macOS and Windows; original gameplay and saves retained. Launcher name/skin handoff was added in later versions."
     }
   ]
 }
