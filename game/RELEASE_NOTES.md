@@ -48,7 +48,7 @@ F5 cycles first-person, rear third-person, and front third-person views. Camera 
 
 The command console opens with `/`, supports history and completion, validates arguments, and restricts modifying commands to Creative or cheats-enabled worlds. F6 quick-saves. Save & Quit captures world edits, block states, player equipment/appearance, entities, weather, portals, and system state before leaving. Save schema 2 retains legacy generator selection and uses atomic replacement with a backup.
 
-Additional controls include the M world atlas with discovery and waypoints, configurable key/mouse bindings, and separate music volume/frequency settings for the supplied “Slopwoofer Lullaby” track. Native UI checks cover Save & Quit, reopening a world, and saved waypoints.
+Additional controls include the M world atlas with discovery and waypoints, configurable key/mouse bindings, and separate music volume/frequency settings for the supplied “Slopwoofer Lullaby” track. Game shutdown drains pending audio playback before exiting, including rapid start/stop sequences. Native UI checks cover Save & Quit, reopening a world, and saved waypoints.
 
 ## Launcher
 
@@ -68,7 +68,7 @@ The frozen build ran all 19 game suites and all 3 launcher suites successfully w
 | Structures and portals | 81,389 checks, 0 failures |
 | Beds and boats | 49 checks, 0 failures |
 | Bed artwork and orientation | 40 checks, 0 failures |
-| New-feature integration | 33 checks, 0 failures; clean music shutdown log |
+| New-feature integration | 38 checks, 0 failures; clean music shutdown log |
 | Content registry | 1,283 checks, 0 failures |
 | Player snapshot | 149 checks, 0 failures |
 | Entity snapshot | 124 checks, 0 failures |

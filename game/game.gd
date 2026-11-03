@@ -38,6 +38,7 @@ var palette_filter = ""
 var selected_slot = -1
 var loading = false
 var audio: Node
+var quitting = false
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
@@ -56,17 +57,20 @@ func _ready() -> void:
 		var d = SaveManager.create_world("Automated smoke world",12345,"creative")
 		await _start_world(d)
 		await get_tree().create_timer(3).timeout
-		_checkpoint()
+		if not _checkpoint():
+			push_error("Smoke world checkpoint failed")
+			await _quit_app(1)
+			return
 		print("GAME_SMOKE_PROFILE="+JSON.stringify({"name":player.player_name,"skin_sha256":player.player_model.skin_image.get_data().hex_encode().sha256_text(),"worlds_directory":SaveManager.worlds_directory}))
 		DirAccess.remove_absolute(SaveManager._path(str(d.id)))
 		DirAccess.remove_absolute(SaveManager._path(str(d.id))+".bak")
 		print("GAME_SMOKE_OK")
-		get_tree().quit()
+		await _quit_app()
 	if "--capture-title" in OS.get_cmdline_user_args():
 		await get_tree().create_timer(8).timeout
 		get_viewport().get_texture().get_image().save_png("user://title-preview.png")
 		print("TITLE_CAPTURE="+ProjectSettings.globalize_path("user://title-preview.png"))
-		get_tree().quit()
+		await _quit_app()
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -74,7 +78,17 @@ func _notification(what: int) -> void:
 			_show_pause()
 			_notify("Could not save. Keep the game open and export a backup.")
 			return
-		get_tree().quit()
+		await _quit_app()
+
+func _quit_app(exit_code: int = 0) -> void:
+	if quitting: return
+	quitting = true
+	if is_instance_valid(player): player.active = false
+	if is_instance_valid(audio):
+		if not await audio.shutdown():
+			push_error("Audio shutdown did not release playback before timeout")
+			exit_code = maxi(exit_code,1)
+	get_tree().quit(exit_code)
 
 func _process(delta: float) -> void:
 	menu_clock += delta
@@ -239,7 +253,7 @@ func _show_title() -> void:
 	var settings_b = SlopSkin.button("Options...",func(): _show_options("title"))
 	settings_b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(settings_b)
-	var quit = SlopSkin.button("Quit game",func(): get_tree().quit())
+	var quit = SlopSkin.button("Quit game",_quit_app)
 	quit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(quit)
 	var tagline = SlopSkin.label("BUILD SOMETHING WORTH GETTING LOST IN.",11,SlopSkin.MUTED)

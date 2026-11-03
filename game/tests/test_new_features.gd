@@ -125,9 +125,32 @@ func run():
 	world.free(); await process_frame
 	var sound=load("res://ui/soundscape.gd").new(); root.add_child(sound)
 	check(sound.TRACK.get_length()>109 and sound.TRACK.get_length()<111,"Slopwoofer Lullaby imports at complete duration")
-	sound.set_music_frequency(100); sound._process(6); check(sound.music.playing,"Music frequency starts real supplied track")
-	sound.set_music_volume(0); check(sound.music.volume_db <= -70,"Music volume mutes track independently of effects")
+	sound.set_music_frequency(100)
+	var deadline=Time.get_ticks_msec()+2000
+	while sound.music.get_playback_position()<=0 and Time.get_ticks_msec()<deadline:
+		await create_timer(.01).timeout
+	check(sound.music.playing and sound.music.get_playback_position()>0,"Music frequency starts and mixes the real supplied track")
+	var played_from=sound.music.get_playback_position()
+	sound.set_music_volume(0)
+	await create_timer(.12).timeout
+	check(sound.music.volume_db <= -70 and sound.music.playing and sound.music.get_playback_position()>played_from,"Gain-only mute preserves advancing playback independently of effects")
+	sound.set_music_volume(.65)
+	check(sound.music.volume_db > -20,"Unmute restores the music gain")
 	sound.set_music_frequency(0); check(not sound.music.playing,"Music frequency off stops playback")
-	sound.free(); await create_timer(.12).timeout
+	check(await sound.shutdown(),"Shutdown drains stopped music before application exit")
+	sound.free()
+	# Exercise the original regression: stop and dispose before a first mix.
+	var instant=load("res://ui/soundscape.gd").new(); root.add_child(instant)
+	instant.set_music_frequency(100); instant._process(6)
+	instant.set_music_volume(0); instant.set_music_frequency(0)
+	check(await instant.shutdown(),"Same-frame play, mute and stop release their Ogg playback")
+	instant.free()
+	# Closing while both music and a UI effect are active uses the same path.
+	var closing=load("res://ui/soundscape.gd").new(); root.add_child(closing)
+	closing.set_music_frequency(100); closing._process(6)
+	closing.effects.stream=closing.click_stream; closing.effects.play()
+	check(await closing.shutdown(),"Closing drains both active music and UI effects")
+	check(not closing.music.playing and not closing.effects.playing,"Shutdown prevents further playback")
+	closing.free(); await process_frame
 	print("NEW FEATURES: ",checks," checks, ",failures," failures")
 	quit(failures)
