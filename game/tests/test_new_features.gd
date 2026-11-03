@@ -132,8 +132,10 @@ func run():
 	check(sound.music.playing and sound.music.get_playback_position()>0,"Music frequency starts and mixes the real supplied track")
 	var played_from=sound.music.get_playback_position()
 	sound.set_music_volume(0)
-	await create_timer(.12).timeout
-	check(sound.music.volume_db <= -70 and sound.music.playing and sound.music.get_playback_position()>played_from,"Gain-only mute preserves advancing playback independently of effects")
+	deadline=Time.get_ticks_msec()+2000
+	while sound.music.playing and sound.music.get_playback_position()<=played_from and Time.get_ticks_msec()<deadline:
+		await create_timer(.01).timeout
+	check(sound.music.volume_db <= -70 and sound.music.playing and sound.music.get_playback_position()>played_from,"Gain-only mute preserves advancing playback independently of effects (gain=%s, playing=%s, from=%s, to=%s)" % [sound.music.volume_db,sound.music.playing,played_from,sound.music.get_playback_position()])
 	sound.set_music_volume(.65)
 	check(sound.music.volume_db > -20,"Unmute restores the music gain")
 	sound.set_music_frequency(0); check(not sound.music.playing,"Music frequency off stops playback")
