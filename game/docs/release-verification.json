@@ -1,0 +1,286 @@
+{
+  "source_sha": "28988fa461b6e5f07e754c7721d41933fc73c6bc",
+  "workflow": "https://github.com/SloppistGames/Slopcraft2/actions/runs/41659095045",
+  "public_download_test": {
+    "platform": "macos",
+    "checks": 57,
+    "failures": 0,
+    "scope": [
+      "Public HTTPS catalog and four game assets",
+      "Actual snapshot download and SHA256 installation",
+      "Offline launcher restart",
+      "Exact player name and skin in installed game",
+      "Real world JSON saved",
+      "Uninstall retains world, profile and skin"
+    ]
+  },
+  "releases": {
+    "snapshot-0.5.0f": {
+      "build": {
+        "schema": 1,
+        "godot": "4.7.stable",
+        "repository": "SloppistGames/Slopcraft2",
+        "source_sha": "28988fa461b6e5f07e754c7721d41933fc73c6bc",
+        "version": "0.5.0f",
+        "tag": "snapshot-0.5.0f",
+        "category": "snapshot",
+        "game_smoke_mode": "world",
+        "game_path": "game",
+        "launcher_path": "launcher",
+        "tests": {
+          "game": [
+            "test_bed_art.gd",
+            "test_content_registry.gd",
+            "test_data.gd",
+            "test_entities_snapshot.gd",
+            "test_fluids.gd",
+            "test_gameplay.gd",
+            "test_integration.gd",
+            "test_nature.gd",
+            "test_new_features.gd",
+            "test_pixel_art.gd",
+            "test_player_snapshot.gd",
+            "test_redstone.gd",
+            "test_rest_transport.gd",
+            "test_shapes.gd",
+            "test_snapshot_save.gd",
+            "test_structures_portals.gd",
+            "test_terrain.gd",
+            "test_weather.gd",
+            "test_world.gd"
+          ],
+          "launcher": [
+            "test_catalog_updates.gd",
+            "test_installer.gd",
+            "test_skin_editor.gd"
+          ]
+        },
+        "packages": {
+          "game": {
+            "macos": {
+              "file": "Slopcraft2-0.5.0f-macos.zip",
+              "sha256": "fd4583b4ea75240f96e2dab3a8684d15396fc9c76d0c7074c48d67f537ed5f83",
+              "size": 62715906,
+              "executable": "Slopcraft 2.app/Contents/MacOS/Slopcraft 2",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2-0.5.0f-macos.zip"
+            },
+            "windows": {
+              "file": "Slopcraft2-0.5.0f-windows.zip",
+              "sha256": "702ad41300729c9a82adc32d1b22a06e391c79cd820d06b75db9c5a04b858d56",
+              "size": 40753715,
+              "executable": "Slopcraft2.exe",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2-0.5.0f-windows.zip"
+            }
+          },
+          "launcher": {
+            "macos": {
+              "file": "Slopcraft2Launcher-0.5.0f-macos.zip",
+              "sha256": "506ab933924690ebb25da8d59b3be4f72c524d518c9a77194e5c89ae9bf74844",
+              "size": 60532973,
+              "executable": "Slopcraft 2 Launcher.app/Contents/MacOS/Slopcraft 2 Launcher",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2Launcher-0.5.0f-macos.zip"
+            },
+            "windows": {
+              "file": "Slopcraft2Launcher-0.5.0f-windows.zip",
+              "sha256": "37b5d57ad00bcdeff6e7e2c8ba1df7df2284df7b4c90223732533ec0fa247772",
+              "size": 38790453,
+              "executable": "Slopcraft2Launcher.exe",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2Launcher-0.5.0f-windows.zip"
+            }
+          }
+        },
+        "catalog_entry": {
+          "id": "0.5.0f",
+          "category": "snapshot",
+          "date": "2026-11-02",
+          "title": "The Living World",
+          "description": "Explore deeper biomes, build with shaped blocks and circuits, rest in beds, sail boats, and chart your world.",
+          "status": "published",
+          "save_schema": 2,
+          "packages": {
+            "macos": {
+              "sha256": "fd4583b4ea75240f96e2dab3a8684d15396fc9c76d0c7074c48d67f537ed5f83",
+              "size": 62715906,
+              "executable": "Slopcraft 2.app/Contents/MacOS/Slopcraft 2",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2-0.5.0f-macos.zip"
+            },
+            "windows": {
+              "sha256": "702ad41300729c9a82adc32d1b22a06e391c79cd820d06b75db9c5a04b858d56",
+              "size": 40753715,
+              "executable": "Slopcraft2.exe",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/snapshot-0.5.0f/Slopcraft2-0.5.0f-windows.zip"
+            }
+          },
+          "changelog": {
+            "Worlds": [
+              "26 surface biomes, deeper caves, villages and strongholds.",
+              "Separate detailed-block and landscape distances.",
+              "World-space precipitation, immersion effects and brighter torches."
+            ],
+            "Build and survive": [
+              "Two-block beds skip night and set your spawn; boats carry you over water.",
+              "Stairs, slabs, fluid flow and functional circuit components.",
+              "Textured creatures, villager trades, third-person held items and custom skins."
+            ],
+            "Pixel art": [
+              "Distinct tops, fronts and sides for utility blocks.",
+              "Transparent crossed plants; redesigned tools and item silhouettes.",
+              "Corrected bed pillow orientation, blanket seams and side mapping in all four rotations."
+            ],
+            "Play your way": [
+              "World atlas with discovery and saved waypoints; rebindable controls.",
+              "Slopwoofer Lullaby with independent music volume and frequency.",
+              "Launcher discovers new versions automatically and keeps installed versions available offline."
+            ],
+            "Known limitations": [
+              "Development snapshot; finite creature roster and Slopcraft circuit rules.",
+              "Detailed blocks load within 2\u201312 chunks; distant landscapes reach 32 chunks.",
+              "macOS is ad-hoc signed without notarization; Windows builds are unsigned."
+            ]
+          }
+        }
+      },
+      "macos": {
+        "platform": "macos",
+        "source_sha": "28988fa461b6e5f07e754c7721d41933fc73c6bc",
+        "version": "0.5.0f",
+        "packages": {
+          "game": "fd4583b4ea75240f96e2dab3a8684d15396fc9c76d0c7074c48d67f537ed5f83",
+          "launcher": "506ab933924690ebb25da8d59b3be4f72c524d518c9a77194e5c89ae9bf74844"
+        },
+        "checks": [
+          "game-title",
+          "game-world",
+          "launcher-title",
+          "launcher-install-profile"
+        ]
+      },
+      "windows": {
+        "platform": "windows",
+        "source_sha": "28988fa461b6e5f07e754c7721d41933fc73c6bc",
+        "version": "0.5.0f",
+        "packages": {
+          "game": "702ad41300729c9a82adc32d1b22a06e391c79cd820d06b75db9c5a04b858d56",
+          "launcher": "37b5d57ad00bcdeff6e7e2c8ba1df7df2284df7b4c90223732533ec0fa247772"
+        },
+        "checks": [
+          "game-title",
+          "game-world",
+          "launcher-title",
+          "launcher-install-profile"
+        ]
+      }
+    },
+    "archive-0.1": {
+      "build": {
+        "schema": 1,
+        "godot": "4.7.stable",
+        "repository": "SloppistGames/Slopcraft2",
+        "source_sha": "28988fa461b6e5f07e754c7721d41933fc73c6bc",
+        "version": "0.1",
+        "tag": "archive-0.1",
+        "category": "archive",
+        "game_smoke_mode": "legacy",
+        "game_path": "archive/0.1",
+        "launcher_path": "launcher",
+        "tests": {
+          "game": [
+            "test_data.gd",
+            "test_gameplay.gd",
+            "test_integration.gd",
+            "test_world.gd"
+          ],
+          "launcher": [
+            "test_catalog_updates.gd",
+            "test_installer.gd",
+            "test_skin_editor.gd"
+          ]
+        },
+        "packages": {
+          "game": {
+            "macos": {
+              "file": "Slopcraft2-0.1-macos.zip",
+              "sha256": "c73a813d72e7c9057f00b166264b891134d8a8cad191bd97f3ce0e6042bc9ee0",
+              "size": 60359977,
+              "executable": "Slopcraft 2.app/Contents/MacOS/Slopcraft 2",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2-0.1-macos.zip"
+            },
+            "windows": {
+              "file": "Slopcraft2-0.1-windows.zip",
+              "sha256": "511583b7280b5fad44576a83f934875adc94537dca094dcc6873709830465359",
+              "size": 38398401,
+              "executable": "Slopcraft2.exe",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2-0.1-windows.zip"
+            }
+          },
+          "launcher": {
+            "macos": {
+              "file": "Slopcraft2Launcher-0.1-macos.zip",
+              "sha256": "af1e85c93342dceaef1ea200693ab8ec00ee8604a19c673c47ad7d39144317bf",
+              "size": 60533142,
+              "executable": "Slopcraft 2 Launcher.app/Contents/MacOS/Slopcraft 2 Launcher",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2Launcher-0.1-macos.zip"
+            },
+            "windows": {
+              "file": "Slopcraft2Launcher-0.1-windows.zip",
+              "sha256": "ca43b8a4b6d941962e1d80ab66ed70a5b687d336e1af580afee6b978da453e8d",
+              "size": 38790622,
+              "executable": "Slopcraft2Launcher.exe",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2Launcher-0.1-windows.zip"
+            }
+          }
+        },
+        "catalog_entry": {
+          "id": "0.1",
+          "category": "archive",
+          "date": "2026-11-03",
+          "title": "Original 0.1 archive",
+          "status": "published",
+          "packages": {
+            "macos": {
+              "sha256": "c73a813d72e7c9057f00b166264b891134d8a8cad191bd97f3ce0e6042bc9ee0",
+              "size": 60359977,
+              "executable": "Slopcraft 2.app/Contents/MacOS/Slopcraft 2",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2-0.1-macos.zip"
+            },
+            "windows": {
+              "sha256": "511583b7280b5fad44576a83f934875adc94537dca094dcc6873709830465359",
+              "size": 38398401,
+              "executable": "Slopcraft2.exe",
+              "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2-0.1-windows.zip"
+            }
+          },
+          "verification": "Native title and world smoke on macOS and Windows; original gameplay and saves retained. Launcher name/skin handoff was added in later versions."
+        }
+      },
+      "macos": {
+        "platform": "macos",
+        "source_sha": "28988fa461b6e5f07e754c7721d41933fc73c6bc",
+        "version": "0.1",
+        "packages": {
+          "game": "c73a813d72e7c9057f00b166264b891134d8a8cad191bd97f3ce0e6042bc9ee0",
+          "launcher": "af1e85c93342dceaef1ea200693ab8ec00ee8604a19c673c47ad7d39144317bf"
+        },
+        "checks": [
+          "game-title",
+          "game-world",
+          "launcher-title"
+        ]
+      },
+      "windows": {
+        "platform": "windows",
+        "source_sha": "28988fa461b6e5f07e754c7721d41933fc73c6bc",
+        "version": "0.1",
+        "packages": {
+          "game": "511583b7280b5fad44576a83f934875adc94537dca094dcc6873709830465359",
+          "launcher": "ca43b8a4b6d941962e1d80ab66ed70a5b687d336e1af580afee6b978da453e8d"
+        },
+        "checks": [
+          "game-title",
+          "game-world",
+          "launcher-title"
+        ]
+      }
+    }
+  }
+}

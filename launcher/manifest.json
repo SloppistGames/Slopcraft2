@@ -47,7 +47,7 @@
         ],
         "Known limitations": [
           "Development snapshot; finite creature roster and Slopcraft circuit rules.",
-          "Detailed blocks load within 2–12 chunks; distant landscapes reach 32 chunks.",
+          "Detailed blocks load within 2\u201312 chunks; distant landscapes reach 32 chunks.",
           "macOS is ad-hoc signed without notarization; Windows builds are unsigned."
         ]
       }
@@ -72,7 +72,8 @@
           "url": "https://github.com/SloppistGames/Slopcraft2/releases/download/archive-0.1/Slopcraft2-0.1-windows.zip"
         }
       },
-      "verification": "Native title and world smoke on macOS and Windows; original gameplay and saves retained. Launcher name/skin handoff was added in later versions."
+      "verification": "Native title and world smoke on macOS and Windows; original gameplay and saves retained. Launcher name/skin handoff was added in later versions.",
+      "save_schema": 1
     }
   ]
 }

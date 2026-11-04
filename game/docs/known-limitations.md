@@ -8,18 +8,18 @@ The delivery requirement is actual Windows and macOS game builds for each publis
 
 | Deliverable | Current verified status |
 | --- | --- |
-| Snapshot 0.5.0f macOS game | Exported; universal binary, signature, title, and world smoke checks passed locally |
-| Snapshot 0.5.0f Windows game | Exported; Windows runtime verification gate pending |
-| macOS launcher | Exported; startup and actual game-package installation/profile handoff passed locally |
-| Windows launcher | Exported; Windows installation/launch verification gate pending |
-| Historical 0.1 game | Source provenance verified; distribution must use its separate build record and platform receipts |
+| Snapshot 0.5.0f macOS game | Published; universal binary, signature, title, and world smoke checks passed |
+| Snapshot 0.5.0f Windows game | Published; native Windows title and world smoke checks passed |
+| macOS launcher | Published; startup, actual game installation/profile handoff and public-download test passed |
+| Windows launcher | Published; native Windows startup and real game installation/profile handoff passed |
+| Historical 0.1 game | Published for both systems; original world creation/save smoke and launcher startup passed |
 | Stable release | None established; do not relabel a snapshot or archive as stable |
 
 All four snapshot game/launcher packages are actual exports. The CI build record includes the tested source commit and each package's SHA-256, size, and executable path. The matching macOS receipt covers game title/world startup, launcher startup, and actual package installation. The installation/profile test passed 11 checks, including player-name forwarding, the exact skin hash, and an isolated version-specific world directory. A universal binary includes both architectures; native execution on every supported Mac architecture has not been established by that fact alone.
 
-macOS packages are ad-hoc signed without notarization; Windows packages are unsigned. Windows CI runtime verification and public asset publication remain pending. Prepared catalog entries and download URLs are build metadata, not evidence that those URLs are live. Automatic catalog discovery is tested, but it can offer a downloadable version only after verified assets are published.
+macOS packages are ad-hoc signed without notarization; Windows packages are unsigned. Both platforms passed [release workflow 41659095045](https://github.com/SloppistGames/Slopcraft2/actions/runs/41659095045). [Snapshot 0.5.0f](https://github.com/SloppistGames/Slopcraft2/releases/tag/snapshot-0.5.0f) and [archive 0.1](https://github.com/SloppistGames/Slopcraft2/releases/tag/archive-0.1) are public. All four game download URLs returned HTTP 200, and the public Mac snapshot completed 57 end-to-end launcher checks: HTTPS download, checksum verification, installation, offline restart, real game launch, exact name/skin transfer and world preservation after uninstall.
 
-Each published version must carry `build.json` with its source commit and package hashes, plus matching macOS and Windows verification receipts. Receipt hashes must match the distributed files. Rebuilt files require new hashes and package verification. No Windows runtime result or public download availability is claimed until those gates pass.
+Each published version must carry `build.json` with its source commit and package hashes, plus matching macOS and Windows verification receipts. Receipt hashes must match the distributed files. Rebuilt files require new hashes and package verification. Both platform receipts and the published files identify source commit `28988fa461b6e5f07e754c7721d41933fc73c6bc`. Later documentation/catalog commits do not replace those immutable release assets.
 
 ## Historical version provenance
 
@@ -29,7 +29,7 @@ The preserved `work/snapshot050/pre-update-source.zip` contains 69 entries and i
 
 The archive's `Slopcraft2/game.gd` declares `0.1 • THE THREE REALMS`. It contains `project.godot`, `main.tscn`, 22 GDScript files, assets, tests, and export presets for universal macOS and Windows x86_64. The project selects Godot 4.7 and GL Compatibility. ZIP integrity passed. A static resource-reference scan found no missing runtime assets or native-extension dependency; screenshot-output paths are external developer artifacts.
 
-This is genuine preserved 0.1 source for rebuilding both platforms. Its provenance does not certify any particular historical package: use the archive release's own build record and platform receipts for that evidence. The included original `Slopcraft 2.dmg` is 71,863,676 bytes; its internal version and runtime were not verified by the source-provenance audit. A matching filename elsewhere is not evidence of a 0.5.0f build. Publish 0.1 only after building and testing its own source, and distinguish a newly rebuilt archive from an original released binary. No other historical versions have been established by this audit.
+This is genuine preserved 0.1 source for rebuilding both platforms. Its provenance does not certify any particular historical package: use the archive release's own build record and platform receipts for that evidence. The included original `Slopcraft 2.dmg` is 71,863,676 bytes; its internal version and runtime were not verified by the source-provenance audit. A matching filename elsewhere is not evidence of a 0.5.0f build. The public 0.1 packages are newly rebuilt from this preserved source, rather than copies of the old DMG. The original game predates launcher profile/data-directory arguments and uses its original save location; export a backup before sharing worlds between standalone and historical versions. No other historical versions have been established by this audit.
 
 ## Generation and world scale
 
@@ -63,6 +63,6 @@ Schema-2 saves preserve legacy generation selection and use atomic replacement/b
 
 The world atlas is a surface overview with discovered areas and up to 128 waypoints. It is not a cave map, route planner, or live entity tracker. Native UI checks cover Save & Quit, reopening, and waypoint persistence; Windows UI behavior still requires its platform verification. The console intentionally supports only implemented commands: `/effect` currently provides healing, `/summon` is limited to pigs/sheep/slimes, coordinates are absolute, and `/fill` is capped at 4,096 blocks.
 
-The frozen source run passed 19 game suites and 3 launcher suites. This includes the 40-check bed UV/orientation correction, 49 bed/boat checks, and 15 automatic-catalog checks. Native macOS package startup and launcher name/skin handoff also passed; details are in [release notes](../RELEASE_NOTES.md). These checks are bounded: they do not certify long-duration survival progression, every portal/terrain configuration, low-memory behavior, maximum-distance performance, or Windows runtime behavior. The remaining release gates are Windows verification and publication of the exact verified assets with matching receipts.
+The frozen source run passed 19 game suites and 3 launcher suites. This includes the 40-check bed UV/orientation correction, 49 bed/boat checks, and 15 automatic-catalog checks. Native macOS and Windows package startup and launcher name/skin handoff also passed; details are in [release notes](../RELEASE_NOTES.md). These checks are bounded: they do not certify long-duration survival progression, every portal/terrain configuration, low-memory behavior, maximum-distance performance, or Windows GPU/visual behavior. Native Windows acceptance is headless; macOS also has rendered UI and gameplay-gallery checks. Long-duration play and hardware-specific visual/performance testing remain ongoing development work.
 
 This snapshot adds working systems with bounded scope. It does not claim full Minecraft feature parity or that every request in the original brief has been exhaustively completed and verified.

@@ -1,6 +1,6 @@
 # Slopcraft 2 — Snapshot 0.5.0f
 
-This is a development snapshot, not a stable release. Game and launcher packages have been exported for macOS and Windows. The frozen source test run and local macOS package verification passed. Windows runtime verification and public release publication remain gated; an exported file or prepared download URL does not establish that a release is publicly available.
+Snapshot 0.5.0f is available with game and launcher packages for macOS and Windows. Both platforms passed native execution checks, followed by a 57-check public download/install test on macOS. Download the packages from [GitHub Releases](https://github.com/SloppistGames/Slopcraft2/releases/tag/snapshot-0.5.0f). This remains a development snapshot with the bounded systems described below.
 
 ## World generation and biomes
 
@@ -54,9 +54,9 @@ Additional controls include the M world atlas with discovery and waypoints, conf
 
 A separate Godot launcher project provides version/category views, changelog display, local player names, launch preferences, and a skin editor with pencil, eraser, fill, palette, grid, zoom, undo/redo, PNG import/export, and a rotating model preview. The game and launcher share the player skin layout.
 
-The installer supports manifest-selected packages, SHA-256 checks, safe extraction, separate installations and game-data directories, and launching a separate process. It refreshes the version catalog automatically while keeping installed versions available offline. Catalog-update tests cover the update behavior; public download availability depends on publication of verified packages.
+The installer supports manifest-selected packages, SHA-256 checks, safe extraction, separate installations and game-data directories, and launching a separate process. It refreshes the version catalog automatically while keeping installed versions available offline. The public catalog now lists verified snapshot 0.5.0f and archive 0.1 downloads for both platforms.
 
-Local macOS verification now installs the actual exported game through the launcher and checks the launched player name, exact skin hash, and version-specific world directory. No stable release or downloadable historical binary is invented.
+Native macOS and Windows verification installs the actual exported snapshot through the launcher and checks the launched player name, exact skin hash, and version-specific world directory. The 0.1 archive preserves its original gameplay and save behavior.
 
 ## Verification evidence
 
@@ -86,9 +86,10 @@ The frozen build ran all 19 game suites and all 3 launcher suites successfully w
 | Launcher skin editor | 40 checks, 0 failures |
 | Launcher installer | 28 checks, 0 failures |
 | Automatic catalog updates | 15 checks, 0 failures |
-| Actual macOS package installation/profile handoff | 11 checks, 0 failures |
+| Actual package installation/profile handoff | macOS and Windows: 11 checks each, 0 failures |
+| Public HTTPS download and offline restart | macOS: 57 checks, 0 failures |
 | Native snapshot UI | 0 failures; Save & Quit, reopen, and waypoint persistence |
 
-The exported macOS game and launcher passed universal-binary and code-signature checks, title startup, and game-world startup. The macOS receipt records the exact package hashes tested. Native creature, held-item, and bed/circuit galleries supplement these checks. These results do not establish Windows runtime success or performance equivalence across hardware.
+The exported macOS game and launcher passed universal-binary and code-signature checks, title startup, and game-world startup. The macOS receipt records the exact package hashes tested. Native creature, held-item, and bed/circuit galleries supplement these checks. Separate Windows receipts verify native startup, world saving and installation/profile handoff. These checks do not establish graphical or performance equivalence across hardware.
 
-Published releases must carry a source commit, package hashes, and matching macOS/Windows verification receipts. Windows CI verification and public asset availability remain pending for this delivery. See [known limitations and delivery status](docs/known-limitations.md) for scope, distribution gates, and historical-source provenance.
+Published releases must carry a source commit, package hashes, and matching macOS/Windows verification receipts. Snapshot 0.5.0f and the preserved 0.1 archive are now public, each with macOS and Windows game and launcher packages. [Release workflow](https://github.com/SloppistGames/Slopcraft2/actions/runs/41659095045) passed native execution on both systems. A separate public-download test passed 57 checks, including offline launcher restart, exact skin/name handoff and preserving world-save bytes after uninstall. See [known limitations and delivery status](docs/known-limitations.md) for scope, distribution gates, and historical-source provenance.
